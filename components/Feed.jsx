@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import ContestCard from "./ContestCard";
 
-// const sortedContest = [data].sort((a,b))
 
 
 
@@ -21,6 +20,7 @@ const ContestCardList = ({ data }) => {
     <div className="mt-16 prompt_layout">
       {sortedData.map((contest) => (
         <ContestCard
+          contest={contest}
           running={contest.status === "CODING"}
           in24hrs={contest.in_24_hours === "Yes"}
           before={contest.status === "BEFORE"}

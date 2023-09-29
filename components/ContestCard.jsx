@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const ContestCard = ({ running, in24hrs, before }) => {
+const ContestCard = ({ contest, in24hrs, before }) => {
   const optionsDateTime = {
     year: "numeric",
     month: "short",
@@ -13,8 +13,8 @@ const ContestCard = ({ running, in24hrs, before }) => {
     hour12: true,
   };
   return (
-    <div className="running_card_live">
-      <Link href={running.url} className="">
+    <div className="contest_card_live">
+      <Link href={contest.url} className="">
         <div className="flex flex-col justify-between items-start gap-5">
           <div className="flex-1 flex justify-start items-center gap-3">
             <Image
@@ -26,20 +26,20 @@ const ContestCard = ({ running, in24hrs, before }) => {
             />
             <div className="flex flex-col">
               <p className="text-xs tracking-widest uppercase text-orange-800">
-                {running.site}
+                {contest.site}
               </p>
               <h3 className="font-semibold text-xl text-orange-900">
-                {running.name}
+                {contest.name}
               </h3>
             </div>
           </div>
           <div className="flex flex-row justify-between">
-            <p>Start: {running.start_time}</p>
-            <p>End: {running.end_time}</p>
+            <p>Start: {contest.start_time}</p>
+            <p>End: {contest.end_time}</p>
           </div>
           <div className="flex flex-row justify-between">
             {/* Convert into hr-min */}
-            <p>Duration: {running.duration}</p>
+            <p>Duration: {contest.duration}</p>
           </div>
         </div>
       </Link>
